@@ -10,5 +10,8 @@ class User < ActiveRecord::Base
 
 
   def password_complexity?
+    if password.present? && !password.match(/\A(?=(.*[A-Z]){2}).(?=(.*[#?!@$%^&*-_]){2}).+\z/)
+      errors.add :password, 'must include at least two lowercase letters and two special characters.'
+   end
   end
 end
