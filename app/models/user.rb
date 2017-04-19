@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :name, format: { with: /\A^flexiple_[a-z_]+\z/, message: 'Should start with flexiple_ and only allows lowercase letters and underscore' }
-
+  validates :name, format: { with: /\Aflexiple_[a-z_]+\z/, message: 'Should start with flexiple_. Only allows lowercase letters and underscore' }
+  validates :name, presence: true
   validate :password_complexity?
 
 

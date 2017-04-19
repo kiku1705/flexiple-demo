@@ -4,7 +4,9 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
+    <em>(start with flexiple_ , only lowercase letters and underscore is allowed.)</em><br/>
+    <br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
